@@ -1,0 +1,65 @@
+
+
+body{
+	background-color: #595353;
+	height: 100%;
+}
+
+.container{
+	background-image: url(news.jpg);
+	height: 100%;
+	width:1280px;
+	padding-bottom: 200px;
+}
+
+#header{
+	text-align: center;
+	font-family: News of the World;
+	color: #cccccc;
+	font-size: 70px;
+	/*font-weight: bold;*/
+}
+
+#button{
+	margin-top: 50px;
+	margin-left: 0px;
+	height: 200px;
+	width: 300px;
+	padding: 20px;
+}
+
+.well{
+	margin-top: -80px;
+	margin-bottom: 20px;
+	opacity: .9;
+	width:70%;
+	margin:auto;
+}
+
+#save-button{
+	margin-top: 10px;
+	margin-left:300px;
+	margin-bottom: 50px;
+}
+
+#cancel-button{
+	margin-top: 10px;
+	margin-bottom: 50px;
+}
+
+.panel{
+	/*margin-top: 50px;*/
+	margin-bottom: 50px;
+
+}
+
+
+
+
+
+
+
+
+
+
+

@@ -83,16 +83,57 @@ app.get("/scrape", function(req, res) {
 
 
 
-app.get("/articles", function(req, res){
+app.get("/articles", function(req, res) {
 
-	Article.find({}, function(error, doc){
-		if (error) {
-			res.send(error);
-		}
-		else{
-			res.send(doc);
-		}
-	});
+    Article.find({}, function(error, doc) {
+        if (error) {
+            res.send(error);
+        } else {
+            res.send(doc);
+        }
+    });
+});
+
+
+app.get("/articles/:id", function(req, res) {
+
+  // var id = mongoose.Types.ObjectId(req.params.id)
+
+  Article.findOne({_id: req.params.id}).populate("note").exec(function(error, doc){
+    if(error){
+      res.send(error);
+    }
+    else{
+      res.send(doc);
+    }
+  });
+
+});
+
+
+app.post("/articles/:id", function(req, res) {
+    var newNote = new Note(req.body);
+    console.log(newNote);
+
+    newNote.save(function(error, doc) {
+        if (error) {
+            res.send(error);
+        } else {
+            Article.findOneAndUpdate({
+                _id: req.params.id
+            }, {
+                note: doc._id
+            }).exec(function(err, doc) {
+                if (err) {
+                    res.send(err);
+                } else {
+                    res.send(doc);
+                    console.log(doc);
+                }
+            });
+        }
+    });
+
 });
 
 

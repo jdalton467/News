@@ -9,9 +9,6 @@ var Schema = mongoose.Schema;
 //create the note schema
 
 var NoteSchema =  new Schema({
-	title:{
-		type:String
-	},
 	body:{
 		type:String
 	}

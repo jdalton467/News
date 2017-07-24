@@ -31,14 +31,17 @@ body{
 .well{
 	margin-top: -80px;
 	margin-bottom: 20px;
-	opacity: .9;
+	/*opacity: .9;*/
 	width:70%;
 	margin:auto;
 }
 
+.notes{
+	position:fixed;
+}
 #save-button{
 	margin-top: 10px;
-	margin-left:300px;
+	margin-left:550px;
 	margin-bottom: 50px;
 }
 
